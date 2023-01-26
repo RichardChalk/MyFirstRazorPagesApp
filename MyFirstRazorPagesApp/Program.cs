@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MyFirstRazorPagesApp.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Lägg till min DbContext
+builder.Services.AddDbContext<NorthwindContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
