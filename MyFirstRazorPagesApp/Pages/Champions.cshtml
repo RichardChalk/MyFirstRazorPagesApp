@@ -5,6 +5,20 @@
 
 <h1>Alla Champions</h1>
 
+<!-- Single statement block -->
+@{ var myMessage = "Hello World"; }
+
+<!-- Inline expression or variable -->
+<p>The value of myMessage is: @myMessage</p>
+
+<!-- Multi-statement block -->
+@{
+    var greeting = "Welcome to our site!";
+    var weekDay = DateTime.Now.DayOfWeek;
+    var greetingMessage = greeting + " Today is: " + weekDay;
+}
+<p>The greeting is: @greetingMessage</p>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -23,7 +37,7 @@
                 <td>@champ.Damage</td>
             </tr>
         }
-        </tbody>
+    </tbody>
 </table>
 
 
